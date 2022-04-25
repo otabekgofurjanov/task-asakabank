@@ -51,7 +51,7 @@ public class UnluckyVassal {
         if (!RECORD.matcher(record).find())
             throw new RuntimeException("Item \"" + record + "\" does not match pattern");
 
-        String masterName = getMaster(record);
+        String masterName = getManagers(record);
         List<String> servants = getServants(record);
 
         //AGAR HIZMATCHILAR YUQ BOLSA NEW CREATE QILINADI
@@ -71,7 +71,7 @@ public class UnluckyVassal {
     }
 
     //PERSONNING EGALARINI QAYTARADI
-    private String getMaster(String record) {
+    private String getManagers(String record) {
         String result = null;
         int index = record.indexOf(":");
         if (index >= 0) {
